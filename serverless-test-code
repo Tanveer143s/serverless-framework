@@ -1,0 +1,42 @@
+service: june1
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  environment:
+    MY_SECRET: ${file(./config.${opt:stage, 'dev'}.json):value}
+    MY_SECRET1: ${file(./config.${opt:stage, 'prod'}.json):value}
+params:
+  default:
+    domain: ${prod}.preview.myapp.com         
+  dev:
+    domain: myapp1.com                        # result shows myapp1.com
+  prod:
+    domain: preview.myapp.com                
+
+custom:
+  globalSchedule: rate(10 minutes)       
+  serviceName: ${self:service}           
+  exportName: ${self:custom.serviceName}-export  
+  name: myfunction
+
+functions:            # This are lambda function
+  hello:
+    name: ${self:custom.name}
+    handler: index.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+      - schedule: ${self:custom.globalSchedule}
+    environment:
+      APIG_DEPLOYMENT_ID: ApiGatewayDeployment${sls:instanceId}     #ID random string to identify them
+      FUNC_PREFIX: third
+
+# resources:
+#   Outputs:
+#     NewServiceExport:                 # add resources like DB/sqs etc/S3 bucket/
+#       Value: 'A Value To Export'
+#       Export:
+#         Name: ${self:custom.exportName}
+
