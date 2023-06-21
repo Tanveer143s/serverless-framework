@@ -1,5 +1,11 @@
 name: hello-world-example...
-on: [push, pull_request]
+on: 
+  push:
+    branches: 
+      - cloud1
+      - main
+  pull_request:
+      types: [opened, closed, synchronize, labeled]
 
 jobs:
   say-hello:
