@@ -1,4 +1,4 @@
-name: hello-world-example..
+name: hello-world-example...
 on:
   pull_request:
     types: [opened, created, deleted, update, merged, label, edited]
