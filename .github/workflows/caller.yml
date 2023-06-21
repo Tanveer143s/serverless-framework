@@ -1,7 +1,7 @@
 name: hello-world-example..
 on:
   pull_request:
-    types: [opened, created, deleted, update, merged, label, edited]
+    types: [opened, created]
 jobs:
   say-hello:
     runs-on: ubuntu-latest
