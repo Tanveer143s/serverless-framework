@@ -1,7 +1,7 @@
 name: hello-world-example..
 on:
-  branch_protection_rule:
-    types: [created, deleted, update, merged, label]
+  pull_request:
+    types: [opened, created, deleted, update, merged, label, edited]
 jobs:
   say-hello:
     runs-on: ubuntu-latest
