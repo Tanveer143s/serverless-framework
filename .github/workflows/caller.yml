@@ -1,6 +1,7 @@
-name: hello-world-example
+name: hello-world-example..
 on:
-  push:
+  branch_protection_rule:
+    types: [created, deleted, update, merged, label]
 jobs:
   say-hello:
     runs-on: ubuntu-latest
