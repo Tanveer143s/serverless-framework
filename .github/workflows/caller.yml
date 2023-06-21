@@ -6,6 +6,8 @@ on:
       - main
   pull_request:
       types: [opened, closed, synchronize, labeled]
+      branches:
+       - cloud1
 
 jobs:
   say-hello:
