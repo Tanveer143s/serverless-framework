@@ -14,7 +14,7 @@ on:
 jobs:
     call-workflow-stag:
       
-      uses: Tanveer143/serverless-framework/.github/workflows/hellocalled.yml@cloud1
+      uses: Tanveer143s/serverless-framework/.github/workflows/hellocalled.yml@cloud1
       with:
         message1: clouddrove.inc      
         message2: cloud123
