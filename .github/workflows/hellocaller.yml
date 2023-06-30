@@ -21,7 +21,7 @@ jobs:
 
     call-workflow-prod:
       
-      uses: Tanveer143/serverless-framework/.github/workflows/hellocalled.yml@cloud1
+      uses: Tanveer143s/serverless-framework/.github/workflows/hellocalled.yml@cloud1
       with:
         message1: tanveer     
         message2: shaikh
