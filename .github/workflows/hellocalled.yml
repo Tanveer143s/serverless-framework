@@ -1,0 +1,31 @@
+name: Shared workflow- SST APP                   
+    
+on:
+  workflow_call:
+    inputs: 
+      message1:
+        description: 'Application environment' 
+        required: false
+        type: string
+      message2:
+        description: 'Application environment' 
+        required: false
+        type: string
+
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Say Hello
+        run: echo ${{ inputs.message1 }}
+      -
+        name: Do stuff
+        run: |
+          echo "Step 1..."
+          echo "Step 2..."
+          echo "Step 3..."
+      -
+        name: Say Goodbye
+        run: echo ${{ inputs.message2 }}
