@@ -1,0 +1,27 @@
+name: workflow_dispatch- SST APP            
+on:
+  push:
+    tags:
+        - 'v[0-9]+.[0-9]+.[0-9]+'
+  pull_request:
+    types: [closed]
+    branches:
+      - 'cloud1'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+    call-workflow-stag:
+      
+      uses: Tanveer143/serverless-framework/.github/workflows/hellocalled.yml@cloud1
+      with:
+        message1: clouddrove.inc      
+        message2: cloud123
+
+    call-workflow-prod:
+      
+      uses: Tanveer143/serverless-framework/.github/workflows/hellocalled.yml@cloud1
+      with:
+        message1: tanveer     
+        message2: shaikh
