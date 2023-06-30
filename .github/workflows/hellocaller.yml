@@ -13,14 +13,14 @@ on:
   
 jobs:
     call-workflow-stag:
-      
+      if: startsWith(github.event.ref, 'refs/tags/v')
       uses: Tanveer143s/serverless-framework/.github/workflows/hellocalled.yml@cloud1
       with:
         message1: clouddrove.inc      
         message2: cloud123
 
     call-workflow-prod:
-      
+      if: ${{ github.event.pull_request.base.ref == 'cloud1' && github.event.pull_request.merged == true }}
       uses: Tanveer143s/serverless-framework/.github/workflows/hellocalled.yml@cloud1
       with:
         message1: tanveer     
