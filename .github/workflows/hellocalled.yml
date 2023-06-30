@@ -10,7 +10,7 @@ on:
       message2:
         description: 'Application environment' 
         required: false
-        type: string
+        type: string 
 
 
 jobs:
