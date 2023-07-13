@@ -1,9 +1,10 @@
 name: hello-world-example..
 on: 
-  pull_request:
+#   pull_request:
+  push:
       types:
           -opened 
-#[closed, synchronize, labeled]
+# [closed, synchronize, labeled]
       branches:
        - cloud1
 #   push:
