@@ -1,7 +1,6 @@
 name: hello-world-example..
 on: 
-#   pull_request:
-  push:
+  pull_request:
       types:
           -opened 
 # [closed, synchronize, labeled]
