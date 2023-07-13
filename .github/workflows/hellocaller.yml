@@ -20,7 +20,7 @@ jobs:
         message2: cloud123
 
     call-workflow-prod:
-      if: ${{ github.event.pull_request.base.ref == 'cloud1' && github.event.pull_request.merged == true }}
+      if: ${{ github.event.pull_request.base.ref == 'cloud1' && github.event.pull_request.merged == true &&  github.event.pull_request.label == true  }}
       uses: Tanveer143s/serverless-framework/.github/workflows/hellocalled.yml@cloud1
       with:
         message1: tanveer     
