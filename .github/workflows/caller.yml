@@ -1,14 +1,14 @@
 name: hello-world-example..
 on: 
-  pull_request:
-      types:
-          -opened 
-# [closed, synchronize, labeled]
-      branches:
-       - cloud1
-#   push:
-#      branches: 
+#   pull_request:
+#       types:
+#           -opened 
+# # [closed, synchronize, labeled]
+#       branches:
 #        - cloud1
+  push:
+     branches: 
+       - cloud1
 
 
 jobs:
