@@ -1,29 +1,16 @@
-name: hello-world-example..
+name: hello-world
 on: 
-#   pull_request:
-#       types:
-#           -opened 
-# # [closed, synchronize, labeled]
-#       branches:
-#        - cloud1
-  push:
-     branches: 
-       - cloud1
-
+   push:
+      branches: 
+        - cloud5
 
 jobs:
-  say-hello:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Say Hello
-        run: echo "Hello world!"
-      -
-        name: Do stuff
-        run: |
-          echo "Step 1..."
-          echo "Step 2..."
-          echo "Step 3..."
-      -
-        name: Say Goodbye
-        run: echo "Goodbye!"
+  build:
+   name: Hello world
+   runs-on: ubuntu-latest
+   steps:
+    - uses: actions/checkout@v2
+    - name: Write a multi-line message
+      run: |
+        echo This demo file shows a 
+         echo very basic and easy-to-understand workflow.
